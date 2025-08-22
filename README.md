@@ -51,5 +51,6 @@ Ejecutando: rt
 Conclusión
 Se muestra la utilidad de las pilas (LIFO) para manejar comandos y de las colas (FIFO) para gestionar procesos.
 
+Para poder ejecutarlo necesitas tener un editor por ejemplo Visual Studio y tener los archivos guardados en la carpeta Actividad 2 del repositorio Actividades, ya con los archivos en VS podrás correr el código correctamente.
 
 
