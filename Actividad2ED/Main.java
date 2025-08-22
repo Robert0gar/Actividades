@@ -21,7 +21,7 @@ public class Main {
             System.out.println("6. Salir");
             System.out.print("Selecciona una opción: ");
             opcion = scanner.nextInt();
-            scanner.nextLine(); // limpiar buffer
+            scanner.nextLine(); 
 
             switch (opcion) {
                 case 1:
@@ -31,8 +31,8 @@ public class Main {
                         comando = scanner.nextLine();
                         comandos.push(comando);
 
-                        System.out.print("¿Deseas agregar otro comando? (s/n): ");
-                    } while (scanner.nextLine().equalsIgnoreCase("s"));
+                        System.out.print("¿Deseas agregar otro comando? (si/no): ");
+                    } while (scanner.nextLine().equalsIgnoreCase("si"));
                     break;
 
                 case 2:
@@ -42,8 +42,8 @@ public class Main {
                         proceso = scanner.nextLine();
                         procesos.enqueue(proceso);
 
-                        System.out.print("¿Deseas agregar otro proceso? (s/n): ");
-                    } while (scanner.nextLine().equalsIgnoreCase("s"));
+                        System.out.print("¿Deseas agregar otro proceso? (si/no): ");
+                    } while (scanner.nextLine().equalsIgnoreCase("si"));
                     break;
 
                 case 3:
@@ -57,8 +57,8 @@ public class Main {
                     System.out.println("\n--- EJECUTANDO COMANDOS COMO PILA (uno por uno) ---");
                     while (!comandos.isEmpty()) {
                         System.out.println("Siguiente comando: " + comandos.peek());
-                        System.out.print("¿Deseas ejecutarlo? (s/n): ");
-                        if (scanner.nextLine().equalsIgnoreCase("s")) {
+                        System.out.print("¿Deseas ejecutarlo? (si/no): ");
+                        if (scanner.nextLine().equalsIgnoreCase("si")) {
                             System.out.println("Ejecutando: " + comandos.pop());
                         } else {
                             break;
@@ -70,8 +70,8 @@ public class Main {
                     System.out.println("\n--- EJECUTANDO PROCESOS COMO COLA (uno por uno) ---");
                     while (!procesos.isEmpty()) {
                         System.out.println("Siguiente proceso: " + procesos.peek());
-                        System.out.print("¿Deseas ejecutarlo? (s/n): ");
-                        if (scanner.nextLine().equalsIgnoreCase("s")) {
+                        System.out.print("¿Deseas ejecutarlo? (si/no): ");
+                        if (scanner.nextLine().equalsIgnoreCase("si")) {
                             System.out.println("Ejecutando: " + procesos.dequeue());
                         } else {
                             break;
