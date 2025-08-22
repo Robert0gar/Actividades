@@ -9,19 +9,27 @@ public class Main {
         Stack<String> comandos = new Stack<>();
         Queue<String> procesos = new Queue<>();
 
-        int opcion;
+        int opcion = 0;
 
         do {
             System.out.println("\n===== MENÚ PRINCIPAL =====");
             System.out.println("1. Agregar comando");
             System.out.println("2. Agregar proceso");
-            System.out.println("3. Ver comandos y procesos agregados");
-            System.out.println("4. Ejecutar comandos como pila");
-            System.out.println("5. Ejecutar procesos como cola");
+            System.out.println("3. Ver comandos y procesos guardados");
+            System.out.println("4. Ejecutar comandos");
+            System.out.println("5. Ejecutar procesos");
             System.out.println("6. Salir");
             System.out.print("Selecciona una opción: ");
-            opcion = scanner.nextInt();
-            scanner.nextLine(); 
+
+            // Validación de entrada: debe ser número
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+                scanner.nextLine(); // limpiar buffer
+            } else {
+                System.out.println("Entrada inválida. Por favor ingresa un número.");
+                scanner.nextLine(); // descartar entrada incorrecta
+                continue; // volver al menú
+            }
 
             switch (opcion) {
                 case 1:
@@ -80,7 +88,7 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("Saliendo del programa...");
+                    System.out.println("Estás saliendo del programa. ¡Hasta luego!");
                     break;
 
                 default:
@@ -92,3 +100,4 @@ public class Main {
         scanner.close();
     }
 }
+
